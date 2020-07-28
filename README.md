@@ -17,5 +17,5 @@ also pip install djangorestframework.
 
 run the program with python manage.py runserver.
 
-navigate to /products/List
+navigate to /products/list
 
