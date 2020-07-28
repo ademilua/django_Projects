@@ -44,7 +44,7 @@
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
-            <h4>My first Django application</h4>
+            <h4>My Django product application</h4>
             <ul class="nav nav-pills nav-stacked">
                 {% if user.is_authenticated %}
                     <li>User: {{ user.get_username }}</li>
@@ -53,6 +53,7 @@
                     <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
                 {% endif %}
                 <li><a href="{% url 'product_list' %}">Product list</a></li>
+                 <li><a href="{% url 'category_list' %}">Category list</a></li>
                 <li><a href="{% url 'product_create' %}">Create a product</a></li>
                 <li><a href="{% url 'counter' %}">Visits count page</a></li>
                 <li><a href="{% url 'my_form' %}">My form</a></li>

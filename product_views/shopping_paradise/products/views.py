@@ -10,7 +10,15 @@ from products.serializers import ProductSerializer, CategorySerializer
 class ProductListView(ListView):
     model = Product
     template_name = 'product_list.html'
-    context_object_name = 'products'
+    context_object_name = 'products'  # This will be use for the "for loop" in the product_list.html to iterate
+    # through the products
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'category_list.html'
+    context_object_name = 'categories'  # This will be use for the "for loop" in the category_list.html to iterate
+    # through the categories
 
 
 class ProductCreateView(CreateView):
@@ -21,11 +29,24 @@ class ProductCreateView(CreateView):
     success_url = reverse_lazy('product_list')
 
 
+class CategoryCreateView(CreateView):
+    model = Category
+    Product.objects.order_by().filter()
+    template_name = 'category_create.html'
+    fields = '__all__'
+    success_url = reverse_lazy('category_list')
+
+
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'product_detail.html'
     context_object_name = 'product'
 
+
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = 'category_detail.html'
+    context_object_name = 'category'
 
 class ProductUpdateView(UpdateView):
     model = Product

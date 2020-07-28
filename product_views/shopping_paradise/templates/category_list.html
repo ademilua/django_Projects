@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>PK</th>
+            <th>Name</th>
+        </tr>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.pk }}</td>
+                <td>{{ category.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
